@@ -12,7 +12,7 @@ public class EmailService {
 
     public static void main(String[] args) {
         var consumer = new KafkaConsumer<String, String>(properties());
-        consumer.subscribe(Collections.singletonList("ECOMMERCER_SEND_EMAIL"));
+        consumer.subscribe(Collections.singletonList("ECOMMERCE_SEND_EMAIL"));
         while (true){
             var records = consumer.poll(Duration.ofMillis(100));
             if(!records.isEmpty()){
